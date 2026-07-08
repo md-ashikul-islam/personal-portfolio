@@ -21,6 +21,8 @@
 /build
 
 # misc
+.venv
+.tool-versions
 .DS_Store
 *.pem
 
