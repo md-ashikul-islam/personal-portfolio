@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ClientMarquee } from "@/components/home/ClientMarquee";
 import { experiences } from "@/data/resume";
 import { MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -158,6 +159,10 @@ export function Experience() {
             <ExperienceCard active={active} />
           </SectionReveal>
         </div>
+
+        <SectionReveal delay={0.25}>
+          <ClientMarquee />
+        </SectionReveal>
       </div>
     </section>
   );

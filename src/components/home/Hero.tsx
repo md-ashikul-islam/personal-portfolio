@@ -7,12 +7,6 @@ import { personalInfo } from "@/data/resume";
 import { FadeIn } from "@/components/ui/SectionReveal";
 import { AnimatedName } from "@/components/home/AnimatedName";
 
-const stats = [
-  { value: personalInfo.yearsExperience, label: "Years QA" },
-  { value: "3", label: "Testing pillars" },
-  { value: "2", label: "Core domains" },
-];
-
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -31,7 +25,7 @@ export function Hero() {
         <FadeIn delay={0.15}>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-[var(--card-bg)] px-4 py-1.5 text-xs font-medium text-muted shadow-[var(--card-shadow)] backdrop-blur-md">
             <Sparkles size={12} className="text-accent" />
-            {personalInfo.yearsExperience} Years · {personalInfo.title}
+            {personalInfo.yearsExperience} Years of QA Experience
           </div>
         </FadeIn>
 
@@ -69,17 +63,6 @@ export function Hero() {
             <a href="#contact" className="btn-secondary px-7 py-3 text-sm">
               Get in Touch
             </a>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.75}>
-          <div className="mx-auto mt-12 grid max-w-lg grid-cols-3 gap-3">
-            {stats.map((stat) => (
-              <div key={stat.label} className="card px-3 py-4">
-                <p className="font-mono text-xl font-bold text-foreground sm:text-2xl">{stat.value}</p>
-                <p className="mt-1 text-[10px] uppercase tracking-wider text-muted sm:text-xs">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </FadeIn>
       </motion.div>

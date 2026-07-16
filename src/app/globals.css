@@ -13,6 +13,9 @@
   --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
   --card-bg: rgba(255, 255, 255, 0.72);
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  --client-logo-bg: rgba(255, 255, 255, 0.92);
+  --client-logo-border: rgba(0, 0, 0, 0.08);
+  --client-logo-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   --grid-line: rgba(0, 0, 0, 0.05);
   --glow: rgba(0, 113, 227, 0.1);
   --selection-fg: #ffffff;
@@ -31,6 +34,9 @@
   --nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   --card-bg: rgba(18, 18, 20, 0.75);
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --client-logo-bg: #ffffff;
+  --client-logo-border: rgba(0, 0, 0, 0.08);
+  --client-logo-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   --grid-line: rgba(255, 255, 255, 0.035);
   --glow: rgba(41, 151, 255, 0.08);
   --selection-fg: #000000;
@@ -165,6 +171,79 @@ body {
   }
 }
 
+.client-marquee-fade {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  height: 100%;
+  width: 4rem;
+}
+
+.client-marquee-fade--left {
+  left: 0;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.client-marquee-fade--right {
+  right: 0;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+.client-marquee--draggable {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.client-marquee--dragging {
+  cursor: grabbing;
+}
+
+.client-marquee-inner {
+  will-change: transform;
+}
+
+.client-marquee-inner--static {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.client-logo-slot {
+  display: flex;
+  height: 3rem;
+  width: 9.5rem;
+  shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  border: 1px solid var(--client-logo-border);
+  background: var(--client-logo-bg);
+  padding: 0.5rem 0.875rem;
+  box-shadow: var(--client-logo-shadow);
+}
+
+.client-logo-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.client-logo-fallback {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #6e6e73;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -185,6 +264,23 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .client-marquee--draggable {
+    cursor: default;
+    touch-action: auto;
+  }
+
+  .client-marquee-inner--static > div:last-child {
+    display: none;
+  }
+
+  .client-marquee {
+    overflow: visible;
+  }
+
+  .client-marquee-fade {
+    display: none;
   }
 
   *,

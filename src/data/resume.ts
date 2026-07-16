@@ -4,7 +4,7 @@ export const personalInfo = {
   title: "Software QA Engineer",
   tagline: "I break things so users don't have to.",
   subtitle:
-    "Software QA Engineer proficient in Manual Testing, Automation & API Testing — with deep expertise in FinTech and AI products.",
+    "Software QA Engineer proficient in Automation , Manual & API Testing — with deep expertise in FinTech and AI products.",
   email: "ashikul005@gmail.com",
   phone: "+880 1845740002",
   yearsExperience: "4+",
@@ -114,6 +114,28 @@ export const experiences: Experience[] = [
   },
 ];
 
+export type Client = {
+  name: string;
+  /** Place logo in public/clients/ — any .svg, .png, or .webp works */
+  logo: string;
+};
+
+export const clients: Client[] = [
+  { name: "Nagad", logo: "/clients/nagad.svg" },
+  { name: "Orbitax", logo: "/clients/orbitax.svg" }, 
+  { name: "Adobe", logo: "/clients/adobe.svg" },
+  { name: "Amazon", logo: "/clients/amazon.svg" },
+  { name: "Askturing", logo: "/clients/askturing.avif" },
+  { name: "Atlassian", logo: "/clients/atlassian.svg" },
+  { name: "Booking.com", logo: "/clients/booking.png" },
+  { name: "Bose", logo: "/clients/bose.png" },
+  { name: "Chevron", logo: "/clients/chevron.svg" },
+  { name: "OMISE", logo: "/clients/omise.png" },
+  { name: "OpenAI", logo: "/clients/openai.svg" },
+  { name: "Spotify", logo: "/clients/spotify.svg" },
+  { name: "Walmart", logo: "/clients/walmart.svg" },
+];
+
 export type Project = {
   id: string;
   title: string;
@@ -136,8 +158,8 @@ export const projects: Project[] = [
     category: "fintech",
     metrics: [
       { label: "Regions", value: "4" },
-      { label: "Framework", value: "New" },
-      { label: "Stack", value: "Playwright" },
+      { label: "Framework", value: "Playwright" },
+      { label: "Coverage", value: "86%" },
     ],
     stack: ["Playwright", "TypeScript", "SSO", "Data Migration"],
     featured: true,
@@ -160,11 +182,11 @@ export const projects: Project[] = [
     color: "#22d3ee",
   },
   {
-    id: "cypress-to-playwright",
-    title: "Framework Migration",
-    subtitle: "Cypress → Playwright",
+    id: "omise-automation-migration",
+    title: "Omise Existing Automation Migration",
+    subtitle: "Cypress → Playwright · TypeScript",
     description:
-      "Architected and executed a full test framework migration — converting legacy Cypress suites to a scalable Playwright + TypeScript architecture.",
+      "Migrated Omise's existing Cypress automation framework to Playwright with TypeScript — achieving 100% suite migration with reduced runtime and lower flakiness.",
     category: "automation",
     metrics: [
       { label: "Migration", value: "100%" },
@@ -210,8 +232,8 @@ export const skillCategories: SkillCategory[] = [
     name: "Manual Testing",
     icon: "clipboard",
     skills: [
-      { name: "Test Case Design", level: 95, description: "Comprehensive functional & regression test planning" },
-      { name: "Exploratory Testing", level: 92, description: "Edge-case discovery in complex workflows" },
+      { name: "Complex Financial Systems testing", level: 95, description: "Comprehensive functional & regression test planning" },
+      { name: "STLC", level: 92, description: "Entire Life Cycle Testing" },
       { name: "UAT & Client Communication", level: 90, description: "Direct coordination with global enterprise clients" },
       { name: "Mobile Testing", level: 88, description: "Android & iOS app validation across devices" },
       { name: "Defect Reporting", level: 93, description: "Clear, actionable bug reports via JIRA & Zephyr Scale" },
@@ -229,6 +251,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Java", level: 80, description: "Test scripts & Selenium bindings" },
       { name: "JavaScript / TypeScript", level: 88, description: "Modern test architecture" },
       { name: "BugBug.io", level: 75, description: "No-code automation flows" },
+      { name: "CI/CD Pipeline", level: 80, description: "Primary framework — TypeScript & JavaScript" },
     ],
   },
   {
@@ -250,7 +273,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "FinTech / MFS", level: 95, description: "Mobile financial services, payments & digital wallets" },
       { name: "Payment Systems", level: 92, description: "Cross-border payment integration & migration" },
       { name: "AI Products", level: 88, description: "AI assistant validation, prompt testing & 2FA flows" },
-      { name: "AI Prompt Engineering", level: 82, description: "AI-assisted test design & response validation" },
+      { name: "Banking Systems", level: 82, description: "Payment gateway, Banking Systems, etc." },
     ],
   },
   {
